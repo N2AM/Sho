@@ -1,0 +1,29 @@
+@import './base.scss';
+@import "node_modules/@kpn-style/bundle/bundle.scss";
+
+@include font-face("kpn-metric", normal, 700, "../node_modules/@kpn-style/bundle/base/typography", "kpn-metric-bold");
+@include font-face('kpn-ui-icons', normal, 400, '../node_modules/@kpn-style/bundle/base/ui-icon', 'kpn-ui-icons');
+
+#app {
+  width: 100%;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+}
