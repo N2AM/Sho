@@ -20,7 +20,7 @@ npm install
 npm run dev
 ```
 
-### Compile and Hot-Reload for Backend server
+### Run Backend server
 
 ```sh
 npm run json-server
