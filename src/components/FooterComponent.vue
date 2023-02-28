@@ -13,14 +13,15 @@
 </template>
 <style lang="scss" scoped>
 .footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  margin-top: auto;
   .footer__body {
     width: 100%;
+    padding-left: 0;
+    padding-right: 0;
     .footer__list {
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       .footer__link {
         padding: 8px;

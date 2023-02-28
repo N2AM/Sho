@@ -4,14 +4,14 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <header class="header">
-    <img alt="Vue logo" class="logo" src="@/assets/kpn-logo.svg" width="125" height="125" />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <img alt="Vue logo" class="logo" src="@/assets/kpn-logo.svg" width="125" height="125" />
 
       <nav class="top-bar">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <div class="top-bar__links">
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+        </div>
         <ul class="top-bar__menu">
           <li class="top-bar__item hidden-xs hidden-s">
             <span class="top-bar__link top-bar__link--expanded top-bar__link--collapsed">
@@ -39,16 +39,15 @@ import { RouterLink } from 'vue-router'
 </template>
 <style scoped>
 .header {
+  background-color: var(--color-background-soft);
   line-height: 1.5;
   max-height: 100vh;
   padding-left: 24px;
   padding-right: 24px;
   box-sizing: border-box;
-  padding-top: 32px;
   padding-bottom: 8px;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 1200px;
+  margin-bottom: 1rem;
 }
 
 .logo {
@@ -59,9 +58,12 @@ import { RouterLink } from 'vue-router'
 nav {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   font-size: 12px;
   text-align: center;
   margin-top: 0.5rem;
+  place-content: center;
+  place-items: center;
 }
 
 nav a.router-link-exact-active {
@@ -85,12 +87,18 @@ nav a:hover {
 nav a:first-of-type {
   border: 0;
 }
-
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+  }
+}
 @media (min-width: 1024px) {
   header {
+    width: 100%;
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
+    margin: auto;
   }
 
   .logo {
@@ -100,16 +108,17 @@ nav a:first-of-type {
   header .wrapper {
     width: 100%;
     display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    align-items: center;
   }
 
   nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
     text-align: left;
-    margin-left: -1rem;
     font-size: 1rem;
     padding: 1rem 0;
     margin-top: 1rem;
