@@ -1,8 +1,10 @@
 <script setup>
 import { useProductsStore } from '../stores/products'
 import Product from './ProductComponent.vue'
+import Spinner from './SpinnerComponent.vue'
 
 const store = useProductsStore()
+
 const getProducts = () => store.getProducts()
 
 getProducts()
@@ -10,10 +12,15 @@ getProducts()
 <template>
   <div class="tile">
     <div class="tile__body">
-      <h2 class="tile__title">
-        <i class="tile__icon ui-mobile"></i>Kies uit {{ store.products.length }} telefoons
-      </h2>
+      <h1 class="tile__title">
+        <span class="txt-light">Kies uit</span>
+        {{ store.products.length }}
+        telephoons
+      </h1>
     </div>
+  </div>
+  <div v-if="!store.products" class="loader">
+    <Spinner />
   </div>
   <div class="tile row" v-if="store.products">
     <Product
@@ -43,7 +50,24 @@ getProducts()
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      font-size: 44px;
+      color: var(--color-heading);
+      padding: 12px;
+      span {
+        font-weight: lighter;
+        margin-right: 12px;
+      }
     }
   }
+}
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999999;
+  overflow: hidden;
+  background: #fff;
 }
 </style>

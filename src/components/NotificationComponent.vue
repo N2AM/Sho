@@ -16,9 +16,9 @@
   max-width: 1200px;
   width: 100%;
   margin: auto;
-  padding-left: 24px;
-  padding-right: 24px;
-  border-top: 4px solid #005500;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-top: 4px solid var(--vt-c-green);
   border-radius: 12px;
   background-color: #c2e1c2;
   margin-bottom: 1rem;

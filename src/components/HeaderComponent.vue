@@ -5,13 +5,19 @@ import { RouterLink } from 'vue-router'
 <template>
   <header class="header">
     <div class="wrapper">
-      <img alt="Vue logo" class="logo" src="@/assets/kpn-logo.svg" width="125" height="125" />
+      <nav class="mega-menu top-bar">
+        <RouterLink to="/" class="mega-menu__logo">
+          <img alt="Logo image" class="logo" src="@/assets/kpn-logo.svg" />
+        </RouterLink>
 
-      <nav class="top-bar">
-        <div class="top-bar__links">
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
-        </div>
+        <ul class="mega-menu__menu">
+          <li class="mega-menu__item">
+            <RouterLink class="mega-menu__link" to="/">Home</RouterLink>
+          </li>
+          <li class="mega-menu__item">
+            <RouterLink class="mega-menu__link" to="/about">About</RouterLink>
+          </li>
+        </ul>
         <ul class="top-bar__menu">
           <li class="top-bar__item hidden-xs hidden-s">
             <span class="top-bar__link top-bar__link--expanded top-bar__link--collapsed">
@@ -37,56 +43,58 @@ import { RouterLink } from 'vue-router'
     </div>
   </header>
 </template>
-<style scoped>
+<style lang="scss" scoped>
 .header {
-  background-color: var(--color-background-soft);
-  line-height: 1.5;
-  max-height: 100vh;
-  padding-left: 24px;
-  padding-right: 24px;
-  box-sizing: border-box;
-  padding-bottom: 8px;
-  max-width: 1200px;
+  padding-right: 0px;
   margin-bottom: 1rem;
+
+  .logo {
+    display: block;
+    margin: 0 auto 0.5rem;
+  }
+
+  nav {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 0.5rem;
+    place-content: center;
+    place-items: center;
+
+    .top-bar__menu {
+      padding: 16px;
+      .top-bar__link {
+        font-size: 16px;
+      }
+    }
+
+    a.router-link-exact-active {
+      color: var(--color-text);
+    }
+
+    a.router-link-exact-active:hover {
+      background-color: transparent;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0 1rem;
+      border-left: 1px solid var(--color-border);
+    }
+
+    a:hover {
+      color: #000 !important;
+    }
+
+    a:first-of-type {
+      border: 0;
+    }
+  }
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 0.5rem;
-  place-content: center;
-  place-items: center;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:hover {
-  color: #000 !important;
-}
-
-nav a:first-of-type {
-  border: 0;
-}
 @media (max-width: 768px) {
   header {
     flex-wrap: wrap;

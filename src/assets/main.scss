@@ -12,12 +12,42 @@
   font-weight: normal;
 }
 
-a,
-.green {
+a {
+  font-size: 16px;
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
 }
+
+// text
+
+.txt-light {
+  font-weight: 300;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+//flex-box
+
+.flex {
+  display: flex;
+}
+
+.place-content-between {
+  place-content: space-between;
+}
+
+.place-items-center {
+  place-items: center;
+}
+
+// media queries
 
 @media (hover: hover) {
   a:hover {
