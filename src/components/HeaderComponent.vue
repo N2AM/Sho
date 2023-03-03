@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router'
 <template>
   <header class="header">
     <div class="wrapper">
-      <nav class="mega-menu top-bar">
+      <nav class="mega-menu top-bar h-auto">
         <RouterLink to="/" class="mega-menu__logo">
           <img alt="Logo image" class="logo" src="@/assets/kpn-logo.svg" />
         </RouterLink>
@@ -19,12 +19,12 @@ import { RouterLink } from 'vue-router'
           </li>
         </ul>
         <ul class="top-bar__menu">
-          <li class="top-bar__item hidden-xs hidden-s">
-            <span class="top-bar__link top-bar__link--expanded top-bar__link--collapsed">
+          <li class="top-bar__item">
+            <span class="top-bar__link top-bar__link--collapsed top-bar__link--expanded">
               <i class="ui-account"></i>
               MijnKPN
             </span>
-            <ul class="top-bar__action-menu top-bar__action-menu--visible">
+            <ul class="top-bar__action-menu">
               <li><a class="top-bar__link">Profile</a></li>
               <li><a class="top-bar__link">Sign out</a></li>
             </ul>
@@ -55,7 +55,6 @@ import { RouterLink } from 'vue-router'
 
   nav {
     width: 100%;
-    min-height: 150px;
     display: flex;
     flex-wrap: wrap;
     font-size: 12px;
@@ -68,6 +67,17 @@ import { RouterLink } from 'vue-router'
       padding: 16px;
       .top-bar__link {
         font-size: 16px;
+      }
+      .top-bar__action-menu {
+        display: none;
+      }
+      .top-bar__item:hover {
+        .top-bar__action-menu {
+          display: block;
+        }
+        .top-bar__link.top-bar__link--collapsed::after {
+          content: '\e920';
+        }
       }
     }
 

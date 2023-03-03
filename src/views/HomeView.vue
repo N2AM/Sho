@@ -5,6 +5,7 @@ import Filters from '../components/FiltersComponent.vue'
 
 <template>
   <main>
+    <Filters />
     <Products />
   </main>
 </template>

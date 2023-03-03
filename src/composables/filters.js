@@ -1,4 +1,9 @@
 export function buildfilters(products) {
   let filters = []
-  filters = [{ lable: 'Merk', values: [{ label: '', counts: '' }] }]
+  filters = [
+    {
+      lable: 'Merk',
+      values: [{ label: '', counts: '' }]
+    }
+  ]
 }
